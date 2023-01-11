@@ -30,8 +30,8 @@ const ListScreen = () => {
             </View>
           );
         }}
-        keyExtractor={(friend) => {
-          friend.name;
+        keyExtractor={(friends) => {
+          friends.name;
         }}
       />
     </View>
