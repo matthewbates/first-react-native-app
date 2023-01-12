@@ -6,18 +6,28 @@ const ColorScreen = () => {
 
   return (
     <View>
+      {/* this will add a new color to the colors array */}
       <Button
         title="Add a Color"
         onPress={() => {
           setColors([...colors, randomRgb()]);
         }}
       />
+      {/* this creates an ongoing list that collects each new color */}
       <FlatList
+        // our data is coming from colors state, which at first is an empty array
         data={colors}
         keyExtractor={(item) => item}
         renderItem={({ item }) => {
           return (
-            <View style={{ height: 100, width: 100, backgroundColor: item }} />
+            <View
+              style={{
+                height: 100,
+                width: 100,
+                backgroundColor: item,
+                marginVertical: 5,
+              }}
+            />
           );
         }}
       />
